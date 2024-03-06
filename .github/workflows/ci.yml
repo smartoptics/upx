@@ -39,7 +39,7 @@ jobs:
           sudo ldconfig
           wget -q -O - https://github.com/upx/upx-stubtools/releases/download/v20210104/bin-upx-20210104.tar.xz | tar -xJ
       - name: 'Check out code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with: { submodules: true }
       - name: 'Rebuild and verify stubs'
         run: |
@@ -62,7 +62,7 @@ jobs:
           - { os: ubuntu-22.04 }
     steps:
       - name: 'Check out code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with: { submodules: true }
       - name: 'Build cmake debug-gcc'
         run:   'make build/debug-gcc'
@@ -105,7 +105,7 @@ jobs:
           - { os: macos-12 }
     steps:
       - name: 'Check out code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with: { submodules: true }
       - name: 'Build cmake debug-gcc'
         if: ${{ matrix.gcc != '' }}
@@ -150,7 +150,7 @@ jobs:
           - { os: windows-2022 }
     steps:
       - name: 'Check out code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with: { submodules: true }
       - name: 'Inspect runner-image settings'
         # see https://github.com/actions/runner-images.git
@@ -199,7 +199,7 @@ jobs:
           - { name: i386-win32-msvc-14.3,  os: windows-2022, C: msvc-14.3-x86, A: x86 }
     steps:
       - name: 'Check out code'
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with: { submodules: true }
       - name: 'Prepare sources'
         shell: cmd
